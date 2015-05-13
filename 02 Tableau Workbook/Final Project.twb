@@ -2743,78 +2743,6 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Distributed Causes of Death of All Black Americans'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='DEMOGRAPHICS+ (C##CS329E_PHP274)' name='oracle.42116.920193634258' />
-          </datasources>
-          <datasource-dependencies datasource='oracle.42116.920193634258'>
-            <column caption='Black Suicide' datatype='real' name='[Calculation_0470422225950990]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[C_BL_SUICIDE]+[D_BL_SUICIDE]' />
-            </column>
-            <column caption='Black Pregnancy Complications' datatype='real' name='[Calculation_1350422225832413]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[A_BL_COMP]' />
-            </column>
-            <column caption='Black Cancer' datatype='real' name='[Calculation_2960422225213538]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_CANCER]+[C_BL_CANCER]+[D_BL_CANCER]+[E_BL_CANCER]+[F_BL_CANCER]' />
-            </column>
-            <column caption='Black Birthdefects' datatype='real' name='[Calculation_4520422225821006]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[A_BL_BIRTHDEF]' />
-            </column>
-            <column caption='Black Heart Disease' datatype='real' name='[Calculation_4710422230727678]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[D_BL_HEARTDIS]+[E_BL_HEARTDIS]+[F_BL_HEARTDIS]' />
-            </column>
-            <column caption='Black Homicide' datatype='real' name='[Calculation_8550422225320913]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_HOMICIDE]+[C_BL_HOMICIDE]+[D_BL_HOMICIDE]' />
-            </column>
-            <column caption='Black Injury' datatype='real' name='[Calculation_8780422225556052]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_INJURY]+[C_BL_INJURY]+[D_BL_INJURY]' />
-            </column>
-            <column-instance column='[Calculation_0470422225950990]' derivation='Sum' name='[sum:Calculation_0470422225950990:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_1350422225832413]' derivation='Sum' name='[sum:Calculation_1350422225832413:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_2960422225213538]' derivation='Sum' name='[sum:Calculation_2960422225213538:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_4520422225821006]' derivation='Sum' name='[sum:Calculation_4520422225821006:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_4710422230727678]' derivation='Sum' name='[sum:Calculation_4710422230727678:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_8550422225320913]' derivation='Sum' name='[sum:Calculation_8550422225320913:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_8780422225556052]' derivation='Sum' name='[sum:Calculation_8780422225556052:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[oracle.42116.920193634258].[:Measure Names]'>
-            <groupfilter function='union' user:op='manual'>
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_4520422225821006:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_2960422225213538:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_4710422230727678:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_8550422225320913:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_8780422225556052:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_1350422225832413:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_0470422225950990:qk]&quot;' />
-            </groupfilter>
-          </filter>
-          <slices>
-            <column>[oracle.42116.920193634258].[:Measure Names]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-        </style>
-        <panes>
-          <pane id='5'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[oracle.42116.920193634258].[Multiple Values]</rows>
-        <cols>[oracle.42116.920193634258].[:Measure Names]</cols>
-      </table>
-    </worksheet>
     <worksheet name='Heart Disease vs. Diabetes'>
       <table>
         <view>
@@ -2895,80 +2823,6 @@
         <cols>[oracle.42116.920193634258].[sum:Calculation_2310422223039208:qk]</cols>
       </table>
     </worksheet>
-    <worksheet name='Normal Distribution'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='DEMOGRAPHICS+ (C##CS329E_PHP274)' name='oracle.42116.920193634258' />
-          </datasources>
-          <datasource-dependencies datasource='oracle.42116.920193634258'>
-            <column caption='Age 19 Under' datatype='real' name='[AGE_19_UNDER]' role='measure' type='quantitative'>
-            </column>
-            <column caption='Total Cancer' datatype='real' name='[Calculation_0590422221650457]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_CANCER]+[B_HI_CANCER]+[B_OT_CANCER]+[B_WH_CANCER]+[C_BL_CANCER]+[C_HI_CANCER]+[C_OT_CANCER]+[C_WH_CANCER]+[D_BL_CANCER]+[D_HI_CANCER]+[D_OT_CANCER]+[D_WH_CANCER]+[E_BL_CANCER]+[E_HI_CANCER]+[E_OT_CANCER]+[E_WH_CANCER]+[F_BL_CANCER]+[F_HI_CANCER]+[F_OT_CANCER]+[F_WH_CANCER]' />
-            </column>
-            <column caption='Total Homicide' datatype='real' name='[Calculation_2000422221953412]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_HOMICIDE]+[B_HI_HOMICIDE]+[B_OT_HOMICIDE]+[B_WH_HOMICIDE]+[C_BL_HOMICIDE]+[C_HI_HOMICIDE]+[C_OT_HOMICIDE]+[C_WH_HOMICIDE]+[D_BL_HOMICIDE]+[C_HI_HOMICIDE]+[C_WH_HOMICIDE]+[D_BL_HOMICIDE]+[D_OT_HOMICIDE]+[D_WH_HOMICIDE]' />
-            </column>
-            <column caption='Total Heart Disease' datatype='real' name='[Calculation_2310422223039208]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[D_BL_HEARTDIS]+[D_HI_HEARTDIS]+[D_OT_HEARTDIS]+[D_WH_HEARTDIS]+[E_BL_HEARTDIS]+[E_OT_HEARTDIS]+[E_WH_HEARTDIS]+[F_BL_HEARTDIS]+[F_HI_HEARTDIS]+[F_OT_HEARTDIS]+[F_WH_HEARTDIS]' />
-            </column>
-            <column caption='Total Injuries' datatype='real' name='[Calculation_2560422222246413]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_INJURY]+[B_HI_INJURY]+[B_OT_INJURY]+[B_WH_INJURY]+[C_BL_INJURY]+[C_HI_INJURY]+[C_OT_INJURY]+[C_WH_INJURY]+[D_BL_INJURY]+[D_HI_INJURY]+[D_OT_INJURY]+[D_WH_INJURY]' />
-            </column>
-            <column caption='Total Pregnancy Complications' datatype='real' name='[Calculation_4320422221555365]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[A_BL_COMP]+[A_HI_COMP]+[A_OT_COMP]+[A_WH_COMP]' />
-            </column>
-            <column caption='Total Birthdefects' datatype='real' name='[Calculation_5430422221443535]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[A_BL_BIRTHDEF]+[A_HI_BIRTHDEF]+[A_OT_BIRTHDEF]+[A_WH_BIRTHDEF]' />
-            </column>
-            <column caption='Total Suicide' datatype='real' name='[Calculation_5750422222804084]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[C_BL_SUICIDE]+[C_HI_SUICIDE]+[C_OT_SUICIDE]+[C_WH_SUICIDE]+[D_BL_SUICIDE]+[D_HI_SUICIDE]+[D_OT_SUICIDE]+[D_WH_SUICIDE]' />
-            </column>
-            <column-instance column='[AGE_19_UNDER]' derivation='None' name='[none:AGE_19_UNDER:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_0590422221650457]' derivation='Sum' name='[sum:Calculation_0590422221650457:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_2000422221953412]' derivation='Sum' name='[sum:Calculation_2000422221953412:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_2310422223039208]' derivation='Sum' name='[sum:Calculation_2310422223039208:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_2560422222246413]' derivation='Sum' name='[sum:Calculation_2560422222246413:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_4320422221555365]' derivation='Sum' name='[sum:Calculation_4320422221555365:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_5430422221443535]' derivation='Sum' name='[sum:Calculation_5430422221443535:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_5750422222804084]' derivation='Sum' name='[sum:Calculation_5750422222804084:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[oracle.42116.920193634258].[:Measure Names]'>
-            <groupfilter function='union' user:op='manual'>
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_5430422221443535:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_0590422221650457:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_2310422223039208:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_2000422221953412:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_2560422222246413:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_4320422221555365:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_5750422222804084:qk]&quot;' />
-            </groupfilter>
-          </filter>
-          <filter class='quantitative' column='[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]' included-values='in-range'>
-            <min>1.3999999999999999</min>
-            <max>47.200000000000003</max>
-          </filter>
-          <slices>
-            <column>[oracle.42116.920193634258].[:Measure Names]</column>
-            <column>[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-        </style>
-        <panes>
-          <pane>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-        </panes>
-        <rows>[oracle.42116.920193634258].[Multiple Values]</rows>
-        <cols>[oracle.42116.920193634258].[:Measure Names]</cols>
-      </table>
-    </worksheet>
     <worksheet name='Poverty vs Homicide'>
       <table>
         <view>
@@ -3005,83 +2859,6 @@
         </panes>
         <rows>[oracle.42116.920193634258].[sum:Calculation_4820513100006626:qk]</rows>
         <cols>[oracle.42116.920193634258].[sum:Calculation_2000422221953412:qk]</cols>
-      </table>
-    </worksheet>
-    <worksheet name='Relationship of Amount of Suicide with High Percentage of Young People'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='DEMOGRAPHICS+ (C##CS329E_PHP274)' name='oracle.42116.920193634258' />
-          </datasources>
-          <datasource-dependencies datasource='oracle.42116.920193634258'>
-            <column caption='Age 19 Under' datatype='real' name='[AGE_19_UNDER]' role='measure' type='quantitative'>
-            </column>
-            <column caption='Total Cancer' datatype='real' name='[Calculation_0590422221650457]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_CANCER]+[B_HI_CANCER]+[B_OT_CANCER]+[B_WH_CANCER]+[C_BL_CANCER]+[C_HI_CANCER]+[C_OT_CANCER]+[C_WH_CANCER]+[D_BL_CANCER]+[D_HI_CANCER]+[D_OT_CANCER]+[D_WH_CANCER]+[E_BL_CANCER]+[E_HI_CANCER]+[E_OT_CANCER]+[E_WH_CANCER]+[F_BL_CANCER]+[F_HI_CANCER]+[F_OT_CANCER]+[F_WH_CANCER]' />
-            </column>
-            <column caption='Total Homicide' datatype='real' name='[Calculation_2000422221953412]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_HOMICIDE]+[B_HI_HOMICIDE]+[B_OT_HOMICIDE]+[B_WH_HOMICIDE]+[C_BL_HOMICIDE]+[C_HI_HOMICIDE]+[C_OT_HOMICIDE]+[C_WH_HOMICIDE]+[D_BL_HOMICIDE]+[C_HI_HOMICIDE]+[C_WH_HOMICIDE]+[D_BL_HOMICIDE]+[D_OT_HOMICIDE]+[D_WH_HOMICIDE]' />
-            </column>
-            <column caption='Total Heart Disease' datatype='real' name='[Calculation_2310422223039208]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[D_BL_HEARTDIS]+[D_HI_HEARTDIS]+[D_OT_HEARTDIS]+[D_WH_HEARTDIS]+[E_BL_HEARTDIS]+[E_OT_HEARTDIS]+[E_WH_HEARTDIS]+[F_BL_HEARTDIS]+[F_HI_HEARTDIS]+[F_OT_HEARTDIS]+[F_WH_HEARTDIS]' />
-            </column>
-            <column caption='Total Injuries' datatype='real' name='[Calculation_2560422222246413]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[B_BL_INJURY]+[B_HI_INJURY]+[B_OT_INJURY]+[B_WH_INJURY]+[C_BL_INJURY]+[C_HI_INJURY]+[C_OT_INJURY]+[C_WH_INJURY]+[D_BL_INJURY]+[D_HI_INJURY]+[D_OT_INJURY]+[D_WH_INJURY]' />
-            </column>
-            <column caption='Total Pregnancy Complications' datatype='real' name='[Calculation_4320422221555365]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[A_BL_COMP]+[A_HI_COMP]+[A_OT_COMP]+[A_WH_COMP]' />
-            </column>
-            <column caption='Total Birthdefects' datatype='real' name='[Calculation_5430422221443535]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[A_BL_BIRTHDEF]+[A_HI_BIRTHDEF]+[A_OT_BIRTHDEF]+[A_WH_BIRTHDEF]' />
-            </column>
-            <column caption='Total Suicide' datatype='real' name='[Calculation_5750422222804084]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[C_BL_SUICIDE]+[C_HI_SUICIDE]+[C_OT_SUICIDE]+[C_WH_SUICIDE]+[D_BL_SUICIDE]+[D_HI_SUICIDE]+[D_OT_SUICIDE]+[D_WH_SUICIDE]' />
-            </column>
-            <column-instance column='[AGE_19_UNDER]' derivation='None' name='[none:AGE_19_UNDER:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_0590422221650457]' derivation='Sum' name='[sum:Calculation_0590422221650457:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_2000422221953412]' derivation='Sum' name='[sum:Calculation_2000422221953412:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_2310422223039208]' derivation='Sum' name='[sum:Calculation_2310422223039208:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_2560422222246413]' derivation='Sum' name='[sum:Calculation_2560422222246413:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_4320422221555365]' derivation='Sum' name='[sum:Calculation_4320422221555365:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_5430422221443535]' derivation='Sum' name='[sum:Calculation_5430422221443535:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_5750422222804084]' derivation='Sum' name='[sum:Calculation_5750422222804084:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[oracle.42116.920193634258].[:Measure Names]'>
-            <groupfilter function='union' user:op='manual'>
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_5430422221443535:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_0590422221650457:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_2310422223039208:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_2000422221953412:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_2560422222246413:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_4320422221555365:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[oracle.42116.920193634258].[sum:Calculation_5750422222804084:qk]&quot;' />
-            </groupfilter>
-          </filter>
-          <filter class='quantitative' column='[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]' included-values='in-range'>
-            <min>43.880000000000003</min>
-            <max>47.200000000000003</max>
-          </filter>
-          <slices>
-            <column>[oracle.42116.920193634258].[:Measure Names]</column>
-            <column>[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='cell'>
-            <format attr='text-format' field='[oracle.42116.920193634258].[sum:Calculation_5430422221443535:qk]' value='' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Bar' />
-          </pane>
-        </panes>
-        <rows>[oracle.42116.920193634258].[Multiple Values]</rows>
-        <cols>[oracle.42116.920193634258].[:Measure Names]</cols>
       </table>
     </worksheet>
     <worksheet name='Smoking vs. Cancer'>
@@ -3153,6 +2930,8 @@
           <field>[oracle.42116.920193634258].[none:CHSI_STATE_NAME (LEADING_CAUSES):nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Heart Disease vs. Obesity'>
       <cards>
@@ -3178,6 +2957,8 @@
           <field>[oracle.42116.920193634258].[none:CHSI_STATE_NAME (LEADING_CAUSES):nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Heart Disease vs. Diabetes'>
       <cards>
@@ -3203,6 +2984,8 @@
           <field>[oracle.42116.920193634258].[none:CHSI_STATE_NAME (LEADING_CAUSES):nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='1' name='Poverty vs Homicide'>
       <cards>
@@ -3226,98 +3009,6 @@
         <color-one-way>
           <field>[oracle.42116.920193634258].[none:CHSI_COUNTY_NAME (DEMOGRAPHICS_SHORT3):nk]</field>
           <field>[oracle.42116.920193634258].[none:COUNTY, STATE:nk]</field>
-        </color-one-way>
-      </highlight>
-    </window>
-    <window auto-hidden='0' class='worksheet' maximized='0' name='Distributed Causes of Death of All Black Americans'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-            <card type='measures' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-      </cards>
-      <highlight>
-        <color-one-way>
-          <field>[oracle.42116.920193634258].[:Measure Names]</field>
-          <field>[oracle.42116.920193634258].[none:CHSI_STATE_NAME:nk]</field>
-        </color-one-way>
-      </highlight>
-    </window>
-    <window auto-hidden='0' class='worksheet' maximized='0' name='Relationship of Amount of Suicide with High Percentage of Young People'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-            <card type='measures' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='160'>
-            <card param='[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
-          </strip>
-        </edge>
-      </cards>
-      <highlight>
-        <color-one-way>
-          <field>[oracle.42116.920193634258].[:Measure Names]</field>
-          <field>[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]</field>
-          <field>[oracle.42116.920193634258].[none:CHSI_COUNTY_NAME:nk]</field>
-          <field>[oracle.42116.920193634258].[none:CHSI_STATE_NAME (LEADING_CAUSES):nk]</field>
-          <field>[oracle.42116.920193634258].[none:CHSI_STATE_NAME (RISK_FACTORS):nk]</field>
-          <field>[oracle.42116.920193634258].[none:CHSI_STATE_NAME:nk]</field>
-        </color-one-way>
-      </highlight>
-    </window>
-    <window auto-hidden='0' class='worksheet' maximized='0' name='Normal Distribution'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-            <card type='measures' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='160'>
-            <card param='[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
-          </strip>
-        </edge>
-      </cards>
-      <highlight>
-        <color-one-way>
-          <field>[oracle.42116.920193634258].[:Measure Names]</field>
-          <field>[oracle.42116.920193634258].[none:AGE_19_UNDER:qk]</field>
         </color-one-way>
       </highlight>
     </window>
@@ -4165,151 +3856,6 @@
       pNwgj5vHDSAELUN+lufnF6mRUwqT4zaeMN065J9TqPJGGKuXWlGhQxHEHaaPWf21eXJdyi1y
       Yyy/p9tRmasqUEu6HEFPmF5i0sb3IuIhPNTnVYjxcoOUOP2S1qztEw0AcLlcer3+tC4/CRvB
       yVnl5P8DG2gzv7L9730AAAAASUVORK5CYII=
-    </thumbnail>
-    <thumbnail height='192' name='Distributed Causes of Death of All Black Americans' width='192'>
-      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
-      RU5ErkJggg==
-    </thumbnail>
-    <thumbnail height='192' name='Relationship of Amount of Suicide with High Percentage of Young People' width='192'>
-      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7EAAAOxAGVKw4b
-      AAAGqklEQVR4nO3d3W9bdwHG8cd2nOM4thO3ibNutHvp0sFSOtikSZOGFDFpgNahMEYlygUS
-      iL+IaxgIaQKENoGYylbadd2WddDSrutasnZt2qUpKXFeSO3jt2NzgRSJGy6an+TQ5/uRIiVR
-      dB7ffHVOchydVK/X6wkwlEqlUul+vwignwgA1ggA1gb6MZokier1ej+mgf/SlwBarZbiOFY+
-      n+/HPLCpLwFIUhRFKhQK/ZoHJPE7AMwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwR
-      AKwRAKwRAKwRAKwRAKwRAKz17T/CgLsxe2VZi+vxlo5RymX1/NR9kggA/2demZ3X0YtLWzrG
-      ZKWwGQCXQLBGALBGALBGALBGALBGALBGALBGALBGALBGALBGALB2z78X6GfvXVOjnWzpGFP3
-      lzT9WCXQK8J2cs8H8NPjl7VWb2/pGIef3kMA9ygugWCNAGCNAGCNAGAtXAC9rm5dmtUvfv6K
-      Ts3dVpLEunDyDf3y10e0VGsFmwFCChdAfVF/evtTTX/vkK5/8LouXDin2RspTT8U69iZz4PN
-      ACGFCyCT0+hQoitzV7VWXdc/VpdVLFa0Y0dZ1Vu31Oh2VavVVKvV1Gg0gs0CWxEugKisZ597
-      ViV1FI2UVIwitTtNdTodDebzGpDU7XY3P4DtIFwA3Vhzp8/o4tw5DYxN6UuPfVnR+nn99vic
-      ntj/sAbSaRWLRRWLRZ4Qj20j3J3gzLCeefElPdFoazCX1+BAWt85/EM1O1I+PxRsBggp4Fsh
-      Uspkcypmc5vfGczlNRhuAAiO+wCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCw
-      RgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCw
-      RgCwRgCwRgCwRgCwRgCwFjSA2vK83jl2XBevV5V021r4+9904v1z+lezE3IGCCZgAHf04ZE3
-      1SgUdPKNP+r6tU/11qkryq5+rJOfLIWbAQIKF0Av0sT9o7r0lw+V/8JeqVlVbvQhHZh8QPNX
-      b6jd6ylJEiVJwoOysW2EC6C+pNOX23r5xz9SauGsFtdj9Xo99SSl0il1u11Vq1VVq1Wtr68H
-      mwW2IlwA2bzGC4k+OfuRGoMj2jXxoJL1Ob179pr27XtYUSajSqWiSqWicrkcbBbYinAPyh4s
-      a/qF53VlfklffHFGu8fzKg0MaHEjpcl9Y8FmgJCCPik+X96lA+Vdm98Z3/OoxsMNAMFxHwDW
-      CADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADW
-      CADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWCADWwj0jrL6s
-      I2++pZvVDa3Vc3rp0Dd0868ndOm29NzMt7V3Zz7YFBBKuDNAfkzfmvm+Dn/zSe2enFKudkNz
-      Gzt18Ct5vf/R5+oFGwLCCXoJ1OvU9PZ71/S16a8qlTRUKOxQsVjU2tKS4iTRysqKVlZWtLGx
-      EXIWuGsBH5MqxRtV1XNlVaK01rKRGo0NxXGswo49yqXTygwPS5KazaZ6Pc4J6L+gZ4Bmrap8
-      6QGlUymNTuzVWPuyfnNyQU/tf1DpVEpRFCmKImWz2ZCzwF0LegYo735SL+z+z+fp/JgO/uAn
-      IQ8PBMefQWGNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCN
-      AGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCN
-      AGCNAGAtaAD16lW9/uqvdPzMZ2p1mpo7dVSvvvZnLcftkDNAMOECSO7og6OzevTrMxrt3NLC
-      Zx/rnctNPT2xqmNnFoLNACGFC6CxpvnVus4f/Z3m/il1O3dULE1oYmynbi8uqtntKo5jxXGs
-      ZrMZbBbYiqCXQJlmRs9897BSN09rYTVWJ+mo2+tpIIqUltRqtdRqtdRuc0mE7SFcAMMVPTVV
-      0rt/+L2WM/dp8pHHNbB2Xq+dmNOB/Y8om05rZGREIyMjKhQKwWaBrQj4pPhBPT59ULvWNpQd
-      Kqk0PKiZlw/pTiul0XIp3AwQUMAApEx2SGPjQ5tfD5XKGvofPw/0G/cBYI0AYI0AYI0AYI0A
-      YI0AYI0AYI0AYI0AYI0AYI0AYI0AYI0AYI0AYI0AYI0AYO3fBAKW9L6WbCUAAAAASUVORK5C
-      YII=
-    </thumbnail>
-    <thumbnail height='192' name='Normal Distribution' width='192'>
-      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
-      rkJggg==
     </thumbnail>
   </thumbnails>
 </workbook>
